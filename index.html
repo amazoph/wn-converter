@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Inches to Wen Converter</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+		<script type="text/javascript">
+			function calculate() {
+				return value;
+			}
+
+			function update() {
+				var value = document.getElementById('inch-text').value;
+				value = value / 12;
+				value = value / 5.33;
+				value = Math.round(value*1000)/1000;
+				value = value + " Wn";
+				var emp = document.getElementById('emp');
+				emp.innerHTML = value;
+			}
+		</script>
+		<style type="text/css">
+			body {
+				background-color: #782A2A;
+			}
+			#emp {
+				font-weight: bold;
+				font-size: 120pt; 
+				font-family: Arial, sans-serif;
+				text-decoration: none;
+				text-align: center;
+				color: #5E1A1A;
+				background-color: #706969;
+				border: 1px solid #999999;
+			}
+
+			#input {
+				font-family: Arial, sans-serif;
+				border: 1px solid #999999;
+				background-color: #706969;
+				text-align: center;
+			}
+
+			#prompt {
+				font-family: Arial, sans-serif;
+				font-size: 36pt;
+				text-align: center;
+			}
+		</style>	
+	</head>
+	<body>
+		<div id="input">
+			<form id="inches" action="POST">
+				<label for="inches"> Inches: </label>
+				<input type="text" name="inches" id="inch-text" /> 
+				<input type="button" onclick="update()" value="Calculate" />
+			</form>
+		</div>
+		<div id="prompt">
+			<br />
+			Your converted length is:
+		</div>
+		<div id="emp">
+		</div>
+	</body>
+</html>
